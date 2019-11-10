@@ -3,12 +3,12 @@ import React from 'react';
 class DrumPad extends React.Component {
     componentDidMount() {
         console.log(this.audio);
-        document.addEventListener('keydown', this.handleKeyDown);
+        document.addEventListener('keydown', this.handleKeydown);
         window.focus();
     }
 
     componentWillUnmount() {
-        document.removeEventListener('keydown', this.handleKeyDown);
+        document.removeEventListener('keydown', this.handleKeydown);
     }
 
     playAudio = () => {
@@ -19,6 +19,7 @@ class DrumPad extends React.Component {
     }
 
     handleKeydown = key => {
+        console.log(key);
         if(key.keyCode === this.props.letter.charCodeAt()){
             this.playAudio();
         }
@@ -31,7 +32,7 @@ class DrumPad extends React.Component {
     render() {
         return (
             <div
-                classname='drum-pad'
+                className='drum-pad'
                 id={this.props.id}
                 onClick={this.handleClick}
             >

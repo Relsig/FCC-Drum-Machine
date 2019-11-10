@@ -15,10 +15,30 @@ const data = [
 ]
 
 class DrumMachine extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      display: "Press My Buttons"
+    }
+  }
+
+  handleDisplay = display => this.setState({display});
+
   render() {
     return (
-      <div className="App">
-        <h1>Druuuums</h1>
+      <div id='drum-machine'>
+        <div id='display'>{this.state.display}</div>
+        <div id='drum-pads'>{data.map(e => (
+            <DrumPad
+              key ={e.id}
+              id = {e.id}
+              letter = {e.letter}
+              src = {e.src}
+              handleDisplay={this.handleDisplay}
+            />
+          
+          ))}
+        </div>
       </div>
     );
   }
