@@ -27,7 +27,7 @@ class DrumMachine extends Component {
   render() {
     return (
       <div id='drum-machine'>
-        <div id='display'>{this.state.display}</div>
+        <div id='display'><h1>{this.state.display}</h1></div>
         <div id='drum-pads'>{data.map(e => (
             <DrumPad
               key ={e.id}
