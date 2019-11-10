@@ -1,4 +1,4 @@
-import React from './react';
+import React from 'react';
 
 class DrumPad extends React.Component {
     componentDidMount() {
@@ -36,7 +36,7 @@ class DrumPad extends React.Component {
                 onClick={this.handleClick}
             >
                 <h1>{this.props.letter}</h1>
-                
+
                 <audio id={this.props.letter}
                         className='clip'
                         src={this.props.src}
